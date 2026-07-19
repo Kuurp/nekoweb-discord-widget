@@ -21,26 +21,23 @@ async function main() {
     "nekoweb.json",
     JSON.stringify(output, null, 2)
   );
-}
-
-async function main() {
   
-  const apiReq = await fetch(`https://nekoweb.org/api/site/info/puddingpudd.com`);
-  const apiRes = await apiReq.json();
+  const apiReq2 = await fetch(`https://nekoweb.org/api/site/info/puddingpudd.com`);
+  const apiRes2 = await apiReq2.json();
 
-  const output = {
-    domain: apiRes.domain,
-    title: apiRes.title,
-    updates: apiRes.updates,
-    followers: apiRes.followers,
-    views: apiRes.views,
-    created_at: new Date(apiRes.created_at).toLocaleDateString("en-GB"),
-    updated_at: new Date(apiRes.updated_at).toLocaleDateString("en-GB")
+  const output2 = {
+    domain: apiRes2.domain,
+    title: apiRes2.title,
+    updates: apiRes2.updates,
+    followers: apiRes2.followers,
+    views: apiRes2.views,
+    created_at: new Date(apiRes2.created_at).toLocaleDateString("en-GB"),
+    updated_at: new Date(apiRes2.updated_at).toLocaleDateString("en-GB")
   };
 
   fs.writeFileSync(
     "nekoweb-puddingpudd.json",
-    JSON.stringify(output, null, 2)
+    JSON.stringify(output2, null, 2)
   );
 }
 
