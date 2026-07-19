@@ -13,4 +13,4 @@ Makes multiple nekoweb stats available in an API point to use for [Discord widge
 
 The API will be available at https://[your github name].github.io/nekoweb-discord-widget/nekoweb.json
 
-It updates each 30 minutes, you can change this in the .github/workflows/update.yml file
+It updates every 30 minutes, you can change this in the .github/workflows/update.yml file
