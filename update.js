@@ -1,53 +1,33 @@
 const fs = require("fs");
 
-const username = "kuurp";
+const urls= [
+  'kuurp.nekoweb.org',
+  'puddingpudd.com',
+  'whirrfox.moe',
+  'mimiya.nekoweb.org',
+]
 
 async function main() {
-  
-  const apiReq = await fetch(`https://nekoweb.org/api/site/info/${username}.nekoweb.org`);
-  const apiRes = await apiReq.json();
 
-  const output = {
-    domain: apiRes.domain,
-    title: apiRes.title,
-    updates: apiRes.updates,
-    followers: apiRes.followers,
-    views: apiRes.views,
-    created_at: new Date(apiRes.created_at).toLocaleDateString("en-GB"),
-    updated_at: new Date(apiRes.updated_at).toLocaleDateString("en-GB")
-  };
+  let jsonOut = {};
 
-  const apiReq2 = await fetch(`https://nekoweb.org/api/site/info/puddingpudd.com`);
-  const apiRes2 = await apiReq2.json();
+  for (const url of urls) {
+    const apiReq = await fetch(`https://nekoweb.org/api/site/info/${url}`);
+    const apiRes = await apiReq.json();
 
-  const output2 = {
-    domain: apiRes2.domain,
-    title: apiRes2.title,
-    updates: apiRes2.updates,
-    followers: apiRes2.followers,
-    views: apiRes2.views,
-    created_at: new Date(apiRes2.created_at).toLocaleDateString("en-GB"),
-    updated_at: new Date(apiRes2.updated_at).toLocaleDateString("en-GB")
-  };
+    const output = {
+      domain: apiRes.domain,
+      title: apiRes.title,
+      updates: apiRes.updates,
+      followers: apiRes.followers,
+      views: apiRes.views,
+      created_at: new Date(apiRes.created_at).toLocaleDateString("en-GB"),
+      updated_at: new Date(apiRes.updated_at).toLocaleDateString("en-GB")
+    };
 
+    const name = url.split(".")[0];
 
-  const apiReq3 = await fetch(`https://nekoweb.org/api/site/info/whirrfox.moe`);
-  const apiRes3 = await apiReq3.json();
-
-  const output3 = {
-    domain: apiRes3.domain,
-    title: apiRes3.title,
-    updates: apiRes3.updates,
-    followers: apiRes3.followers,
-    views: apiRes3.views,
-    created_at: new Date(apiRes3.created_at).toLocaleDateString("en-GB"),
-    updated_at: new Date(apiRes3.updated_at).toLocaleDateString("en-GB")
-  };
-
-  const jsonOut = {
-    "kuurp": output,
-    "puddingpudd": output2,
-    "whirrfox": output3
+    jsonOut[name] = output;
   }
 
   fs.writeFileSync("nekoweb.json", JSON.stringify(jsonOut, null, 2));
