@@ -8,7 +8,7 @@ Makes multiple nekoweb stats available in an API point to use for [Discord widge
 
 - Copy this repository
 - Enable Github pages on branch main
-- Enable github actions to run
+- Allow Github actions to run
 - Change the urls variable in update.js to the nekoweb urls you want to track
 
 The API will be available at https://[your github name].github.io/nekoweb-discord-widget/nekoweb.json
