@@ -1,9 +1,29 @@
 {
-  "domain": "kuurp.nekoweb.org",
-  "title": "Kuurp's site",
-  "updates": 224,
-  "followers": 101,
-  "views": 1883,
-  "created_at": "22/08/2025",
-  "updated_at": "19/07/2026"
+  "kuurp": {
+    "domain": "kuurp.nekoweb.org",
+    "title": "Kuurp's site",
+    "updates": 224,
+    "followers": 101,
+    "views": 1885,
+    "created_at": "23/08/2025",
+    "updated_at": "19/07/2026"
+  },
+  "puddingpudd": {
+    "domain": "puddingpudd.com",
+    "title": "Pudding's Cove",
+    "updates": 5949,
+    "followers": 156,
+    "views": 74876,
+    "created_at": "14/10/2024",
+    "updated_at": "18/07/2026"
+  },
+  "whirrfox": {
+    "domain": "whirrfox.moe",
+    "title": "WhirrFox's Homepage ☆",
+    "updates": 3232,
+    "followers": 178,
+    "views": 25319,
+    "created_at": "23/10/2024",
+    "updated_at": "17/07/2026"
+  }
 }

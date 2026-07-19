@@ -17,11 +17,6 @@ async function main() {
     updated_at: new Date(apiRes.updated_at).toLocaleDateString("en-GB")
   };
 
-  fs.writeFileSync(
-    "nekoweb.json",
-    JSON.stringify(output, null, 2)
-  );
-  
   const apiReq2 = await fetch(`https://nekoweb.org/api/site/info/puddingpudd.com`);
   const apiRes2 = await apiReq2.json();
 
@@ -35,10 +30,6 @@ async function main() {
     updated_at: new Date(apiRes2.updated_at).toLocaleDateString("en-GB")
   };
 
-  fs.writeFileSync(
-    "nekoweb-puddingpudd.json",
-    JSON.stringify(output2, null, 2)
-  );
 
   const apiReq3 = await fetch(`https://nekoweb.org/api/site/info/whirrfox.moe`);
   const apiRes3 = await apiReq3.json();
@@ -53,10 +44,13 @@ async function main() {
     updated_at: new Date(apiRes3.updated_at).toLocaleDateString("en-GB")
   };
 
-  fs.writeFileSync(
-    "nekoweb-whirrfox.json",
-    JSON.stringify(output3, null, 2)
-  );
+  const jsonOut = {
+    "kuurp": output,
+    "puddingpudd": output2,
+    "whirrfox": output3
+  }
+
+  fs.writeFileSync("nekoweb.json", JSON.stringify(jsonOut, null, 2));
 }
 
 main();
